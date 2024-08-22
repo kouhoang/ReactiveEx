@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/headerBar2"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Staff Details"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/doneButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_done"
+            android:layout_gravity="end">
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleEditName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Nhập họ và tên"
+        app:startIconDrawable="@drawable/ic_person"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleEditYearOfBirth"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Ngày sinh"
+        app:startIconDrawable="@drawable/ic_calendar"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editYearOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleEditHometown"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Nhập quê quán"
+        app:startIconDrawable="@drawable/ic_home"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editHometown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="48dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/deleteNoteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="deleteNote"
+        android:text="DELETE"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:src="@drawable/avatar"
+            android:id="@+id/avatarView"
+            android:layout_marginStart="6dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+            android:textStyle="bold"
+            android:id="@+id/tenNhanVien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kou Hoàng"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/namSinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="31/10/2003"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginTop="6dp"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/queQuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uông Bí - Quảng Ninh"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginTop="6dp"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
