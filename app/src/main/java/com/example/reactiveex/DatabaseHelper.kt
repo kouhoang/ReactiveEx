@@ -102,15 +102,15 @@ class DatabaseHelper(
     }
 
     private fun insertDefaultData(db: SQLiteDatabase?) {
-        val database = db ?: writableDatabase // Sử dụng writableDatabase nếu db là null
+        val database = db ?: writableDatabase // Use writableDatabase if db is null
 
-        // Kiểm tra xem bảng có dữ liệu chưa
+        // Check if the table has data or not
         val cursor = database.rawQuery("SELECT COUNT(*) FROM $TABLE_NAME", null)
         cursor?.use {
             it.moveToFirst()
             val count = it.getInt(0)
             if (count == 0) {
-                // Nếu bảng trống, chèn dữ liệu mẫu
+                // If the table is blank, insert default data
                 getDefaultStaffList().forEach { staff ->
                     insertStaff(staff, database)
                 }
