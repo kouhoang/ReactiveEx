@@ -17,7 +17,7 @@ class DatabaseHelper(
                 "$COLUMN_HOMETOWN TEXT)"
         db?.execSQL(createTable)
 
-        // Chèn dữ liệu mặc định nếu bảng trống
+        // Insert default data if the table is blank
         insertDefaultData(db)
     }
 
@@ -34,7 +34,7 @@ class DatabaseHelper(
         staff: Staff,
         db: SQLiteDatabase? = null,
     ): Long {
-        val database = db ?: writableDatabase // Sử dụng writableDatabase nếu db là null
+        val database = db ?: writableDatabase // Use writableDatabase if db is null
         val values =
             ContentValues().apply {
                 put(COLUMN_NAME, staff.name)
@@ -120,24 +120,24 @@ class DatabaseHelper(
 
     fun getDefaultStaffList(): List<Staff> =
         listOf(
-            Staff(id = -1, name = "John Doe", yearOfBirth = "1990", hometown = "New York"),
-            Staff(id = -1, name = "Jane Smith", yearOfBirth = "1985", hometown = "Los Angeles"),
-            Staff(id = -1, name = "Emily Johnson", yearOfBirth = "1988", hometown = "Chicago"),
-            Staff(id = -1, name = "Michael Brown", yearOfBirth = "1992", hometown = "Houston"),
-            Staff(id = -1, name = "Jessica Davis", yearOfBirth = "1991", hometown = "Philadelphia"),
-            Staff(id = -1, name = "David Wilson", yearOfBirth = "1989", hometown = "Phoenix"),
-            Staff(id = -1, name = "Laura Miller", yearOfBirth = "1993", hometown = "San Antonio"),
-            Staff(id = -1, name = "James Moore", yearOfBirth = "1987", hometown = "San Diego"),
-            Staff(id = -1, name = "Olivia Taylor", yearOfBirth = "1994", hometown = "Dallas"),
-            Staff(id = -1, name = "Daniel Anderson", yearOfBirth = "1986", hometown = "San Jose"),
-            Staff(id = -1, name = "Sophia Thomas", yearOfBirth = "1995", hometown = "Austin"),
-            Staff(id = -1, name = "William Martinez", yearOfBirth = "1984", hometown = "San Francisco"),
-            Staff(id = -1, name = "Mia Jackson", yearOfBirth = "1996", hometown = "Columbus"),
-            Staff(id = -1, name = "Alexander White", yearOfBirth = "1983", hometown = "Fort Worth"),
-            Staff(id = -1, name = "Charlotte Harris", yearOfBirth = "1989", hometown = "Indianapolis"),
-            Staff(id = -1, name = "Ethan Clark", yearOfBirth = "1987", hometown = "Charlotte"),
-            Staff(id = -1, name = "Amelia Lewis", yearOfBirth = "1990", hometown = "San Francisco"),
-            Staff(id = -1, name = "Lucas Walker", yearOfBirth = "1992", hometown = "Seattle"),
+            Staff(id = -1, name = "Trần Bình An", yearOfBirth = "1994", hometown = "Quảng Ninh"),
+            Staff(id = -1, name = "Ninh Diêu", yearOfBirth = "1994", hometown = "Hà Nội"),
+            Staff(id = -1, name = "Nguyễn Tú", yearOfBirth = "2000", hometown = "Lào Cai"),
+            Staff(id = -1, name = "Tề Tĩnh Xuân", yearOfBirth = "1960", hometown = "Nghệ An"),
+            Staff(id = -1, name = "Lưu Tiện Dương", yearOfBirth = "1992", hometown = "Quảng Ninh"),
+            Staff(id = -1, name = "Cố Xán", yearOfBirth = "1998", hometown = "Quảng Ninh"),
+            Staff(id = -1, name = "Trĩ Khuê", yearOfBirth = "1996", hometown = "Hải Dương"),
+            Staff(id = -1, name = "Tống Tập Tân", yearOfBirth = "1993", hometown = "Hà Nội"),
+            Staff(id = -1, name = "Thôi Đông Sơn", yearOfBirth = "1984", hometown = "Hồ Chí Minh"),
+            Staff(id = -1, name = "Bùi Tiền", yearOfBirth = "1999", hometown = "Đà Nẵng"),
+            Staff(id = -1, name = "Mao Tiểu Đồng", yearOfBirth = "1990", hometown = "Kon Tum"),
+            Staff(id = -1, name = "A Lương", yearOfBirth = "1970", hometown = "Thanh Hóa"),
+            Staff(id = -1, name = "Bạch Trạch", yearOfBirth = "1986", hometown = "Hồ Chí Minh"),
+            Staff(id = -1, name = "Thôi Thành", yearOfBirth = "1989", hometown = "Đà Nẵng"),
+            Staff(id = -1, name = "Tú Hổ", yearOfBirth = "1981", hometown = "Hà Nội"),
+            Staff(id = -1, name = "Quách Trúc Tửu", yearOfBirth = "1997", hometown = "Hải Phòng"),
+            Staff(id = -1, name = "Tào Tình Lang", yearOfBirth = "1992", hometown = "Nam Định"),
+            Staff(id = -1, name = "Lý Nhị", yearOfBirth = "1977", hometown = "Nam Định"),
         )
 
     companion object {
