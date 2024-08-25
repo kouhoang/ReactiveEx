@@ -1,4 +1,4 @@
-package com.example.reactiveex
+package com.example.reactiveex.ui.staffdetails
 
 import android.os.Bundle
 import android.text.Editable
@@ -6,6 +6,9 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.reactiveex.R
+import com.example.reactiveex.data.DatabaseHelper
+import com.example.reactiveex.data.Staff
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 

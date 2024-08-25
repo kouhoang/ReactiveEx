@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,19 +37,42 @@
             android:layout_gravity="end" />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/searchEditText"
+    <LinearLayout
+        android:id="@+id/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search..."
+        android:orientation="horizontal"
         android:layout_below="@id/headerBar"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search..."
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/byYearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Year" />
+
+        <Button
+            android:id="@+id/byHometownButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Hometown" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchEditText"
+        android:layout_below="@id/tools"
         android:background="#fcfcfc"
         tools:listitem="@layout/recycler_view_design"
         android:layout_marginTop="3dp"

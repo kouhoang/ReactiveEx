@@ -1,9 +1,11 @@
-package com.example.reactiveex
+package com.example.reactiveex.ui.staffdetails
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reactiveex.R
+import com.example.reactiveex.data.Staff
 import com.google.android.material.textview.MaterialTextView
 
 class StaffAdapter(
@@ -15,10 +17,7 @@ class StaffAdapter(
         parent: ViewGroup,
         viewType: Int,
     ): StaffViewHolder {
-        val view =
-            LayoutInflater
-                .from(parent.context)
-                .inflate(R.layout.recycler_view_design, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_design, parent, false)
         return StaffViewHolder(view)
     }
 

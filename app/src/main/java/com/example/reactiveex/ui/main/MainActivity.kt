@@ -1,4 +1,4 @@
-package com.example.reactiveex
+package com.example.reactiveex.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,11 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reactiveex.R
+import com.example.reactiveex.data.DatabaseHelper
+import com.example.reactiveex.data.Staff
+import com.example.reactiveex.ui.staffdetails.StaffAdapter
+import com.example.reactiveex.ui.staffdetails.StaffDetailsActivity
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 

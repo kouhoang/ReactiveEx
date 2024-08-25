@@ -1,4 +1,4 @@
-package com.example.reactiveex
+package com.example.reactiveex.data
 
 import java.io.Serializable
 
