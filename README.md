@@ -2,12 +2,6 @@
 
 Ứng dụng này được xây dựng để quản lý thông tin nhân viên bao gồm tên, năm sinh và quê quán. Ứng dụng hỗ trợ các tính năng như tìm kiếm nhân viên, lọc theo năm sinh, quê quán, và thêm, chỉnh sửa, xóa nhân viên.
 
-## Cấu trúc dự án
-
-- **data/**: Chứa lớp `DatabaseHelper` quản lý cơ sở dữ liệu SQLite và thao tác với bảng nhân viên.
-- **ui/main/**: Chứa `MainActivity` nơi hiển thị danh sách nhân viên và các chức năng tìm kiếm, lọc dữ liệu.
-- **ui/staffdetails/**: Chứa `StaffDetailsActivity` cho phép người dùng thêm mới hoặc chỉnh sửa thông tin nhân viên.
-
 ## Các tính năng chính
 
 ### 1. Hiển thị danh sách nhân viên
