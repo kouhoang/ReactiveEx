@@ -149,4 +149,72 @@ class DatabaseHelper(
         const val COLUMN_YEAR_OF_BIRTH = "year_of_birth"
         const val COLUMN_HOMETOWN = "hometown"
     }
+
+    fun getDistinctYears(): List<String> {
+        val years = mutableListOf<String>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT DISTINCT $COLUMN_YEAR_OF_BIRTH FROM $TABLE_NAME", null)
+        cursor?.use {
+            while (it.moveToNext()) {
+                years.add(it.getString(0))
+            }
+        }
+        return years
+    }
+
+    fun getDistinctHometowns(): List<String> {
+        val hometowns = mutableListOf<String>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT DISTINCT $COLUMN_HOMETOWN FROM $TABLE_NAME", null)
+        cursor?.use {
+            while (it.moveToNext()) {
+                hometowns.add(it.getString(0))
+            }
+        }
+        return hometowns
+    }
+
+    fun searchStaffByYear(year: String): List<Staff> {
+        val staffList = mutableListOf<Staff>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_YEAR_OF_BIRTH = ?", arrayOf(year))
+
+        cursor?.use {
+            if (it.moveToFirst()) {
+                do {
+                    val staff =
+                        Staff(
+                            id = it.getLong(it.getColumnIndexOrThrow(COLUMN_ID)),
+                            name = it.getString(it.getColumnIndexOrThrow(COLUMN_NAME)),
+                            yearOfBirth = it.getString(it.getColumnIndexOrThrow(COLUMN_YEAR_OF_BIRTH)),
+                            hometown = it.getString(it.getColumnIndexOrThrow(COLUMN_HOMETOWN)),
+                        )
+                    staffList.add(staff)
+                } while (it.moveToNext())
+            }
+        }
+        return staffList
+    }
+
+    fun searchStaffByHometown(hometown: String): List<Staff> {
+        val staffList = mutableListOf<Staff>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_HOMETOWN = ?", arrayOf(hometown))
+
+        cursor?.use {
+            if (it.moveToFirst()) {
+                do {
+                    val staff =
+                        Staff(
+                            id = it.getLong(it.getColumnIndexOrThrow(COLUMN_ID)),
+                            name = it.getString(it.getColumnIndexOrThrow(COLUMN_NAME)),
+                            yearOfBirth = it.getString(it.getColumnIndexOrThrow(COLUMN_YEAR_OF_BIRTH)),
+                            hometown = it.getString(it.getColumnIndexOrThrow(COLUMN_HOMETOWN)),
+                        )
+                    staffList.add(staff)
+                } while (it.moveToNext())
+            }
+        }
+        return staffList
+    }
 }
